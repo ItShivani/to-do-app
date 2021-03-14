@@ -1,0 +1,33 @@
+<html>
+ 
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="/assets/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+ 
+<body>
+    <div id="todo-table" className="form-group">
+        <form action="" method="post">
+            <input type="text" name="itemName" placeholder="Add new item..." required />
+            <button type="submit" class="btn btn-primary">Add Item</button>
+        <!--</form> -->
+         <!-- <ul> -->
+         <table className="table" style="text-align:center"> 
+          <%
+            for(i=0; i<todos.length ; i++){
+                %> <tr>
+                <td id="itemloc"><%= todos[i].item %></td>
+                 <td> <a href="/update/<%= todos[i]._id%>" class="btn btn-info">Update</a></td>
+                 <td><a href="/remove/<%= todos[i]._id%>" class="btn btn-danger">x</a></td> <br/></tr>
+                <%
+            }
+          %>
+        </table>
+         <!-- </ul>  -->
+         </form>
+    </div>
+</body>
+ 
+</html>
